@@ -7,6 +7,7 @@ export const main = style({
   alignItems: "center",
   height: "100vh",
   padding: "2rem",
+  boxSizing: "border-box",
 
   "@media": {
     "screen and (min-width: 1024px)": {
