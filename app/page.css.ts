@@ -19,12 +19,14 @@ export const main = style({
 
 export const content = style({
   position: "relative",
+  padding: "4rem 0",
   zIndex: 2,
 
   "@media": {
     "screen and (min-width: 1024px)": {
       left: "2.5rem",
       order: 1,
+      padding: 0,
     },
   },
 });
@@ -171,7 +173,6 @@ const verticalReveal = keyframes({
 
 export const profile = style({
   position: "relative",
-  marginBottom: "4rem",
   zIndex: 1,
   maxWidth: "600px",
   width: "100%",
