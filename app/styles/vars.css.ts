@@ -27,6 +27,7 @@ export const theme = style({
     },
   }),
 
+  margin: 0,
   backgroundColor: vars.colors.background,
   color: vars.colors.primary,
 
