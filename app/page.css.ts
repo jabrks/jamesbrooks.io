@@ -3,15 +3,30 @@ import { vars } from "./styles/vars.css";
 
 export const main = style({
   display: "flex",
-  justifyContent: "center",
+  flexDirection: "column",
   alignItems: "center",
   height: "100vh",
+  padding: "2rem",
+
+  "@media": {
+    "screen and (min-width: 1024px)": {
+      flexDirection: "row",
+      justifyContent: "center",
+      padding: 0,
+    },
+  },
 });
 
 export const content = style({
   position: "relative",
-  left: "2.5rem",
   zIndex: 2,
+
+  "@media": {
+    "screen and (min-width: 1024px)": {
+      left: "2.5rem",
+      order: 1,
+    },
+  },
 });
 
 const horizontalReveal = keyframes({
@@ -58,8 +73,14 @@ export const heading = style({
   flexDirection: "column",
   gap: "0.25rem",
   fontFamily: vars.fonts.sansSerif,
-  fontSize: "6rem",
+  fontSize: "4rem",
   margin: 0,
+
+  "@media": {
+    "screen and (min-width: 1024px)": {
+      fontSize: "6rem",
+    },
+  },
 });
 
 export const paragraph = style({
@@ -67,9 +88,15 @@ export const paragraph = style({
   flexDirection: "column",
   gap: "0.25rem",
   fontFamily: vars.fonts.serif,
-  fontSize: "1.5rem",
+  fontSize: "1.25rem",
   margin: "2.5rem 0 0",
   color: vars.colors.secondary,
+
+  "@media": {
+    "screen and (min-width: 1024px)": {
+      fontSize: "1.5rem",
+    },
+  },
 });
 
 export const starling = style({
@@ -144,8 +171,10 @@ const verticalReveal = keyframes({
 
 export const profile = style({
   position: "relative",
-  left: "-2.5rem",
+  marginBottom: "4rem",
   zIndex: 1,
+  maxWidth: "600px",
+  width: "100%",
 
   "::before": {
     content: "",
@@ -172,4 +201,17 @@ export const profile = style({
     animation: `${verticalReveal} 0.5s 1.5s ease forwards`,
     zIndex: 3,
   },
+
+  "@media": {
+    "screen and (min-width: 1024px)": {
+      right: "2.5rem",
+      order: 2,
+      margin: 0,
+    },
+  },
+});
+
+export const image = style({
+  width: "100%",
+  height: "100%",
 });

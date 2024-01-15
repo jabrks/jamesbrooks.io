@@ -11,6 +11,15 @@ function Span({ children }: { children: ReactNode }) {
 export default function Home() {
   return (
     <main className={classes.main}>
+      <div className={classes.profile}>
+        <Image
+          className={classes.image}
+          src={profile}
+          alt="Photo of James Brooks"
+          priority
+        />
+      </div>
+
       <div className={classes.content}>
         <h1 className={classes.heading}>
           <Span>Hi, I’m</Span>
@@ -35,10 +44,6 @@ export default function Home() {
         <Link className={classes.link} href="mailto:james@jamesbrooks.io">
           Get in touch 👋
         </Link>
-      </div>
-
-      <div className={classes.profile}>
-        <Image src={profile} alt="Photo of James Brooks" priority />
       </div>
     </main>
   );
