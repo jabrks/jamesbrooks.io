@@ -1,4 +1,4 @@
-import { style } from "@vanilla-extract/css";
+import { keyframes, style } from "@vanilla-extract/css";
 import { vars } from "./styles/vars.css";
 
 export const main = style({
@@ -11,13 +11,46 @@ export const main = style({
 export const content = style({
   position: "relative",
   left: "2.5rem",
-  zIndex: 1,
+  zIndex: 2,
+});
+
+const horizontalReveal = keyframes({
+  "0%": { transform: "scaleX(100%)" },
+  "100%": { transform: "scaleX(0%)" },
 });
 
 export const span = style({
+  position: "relative",
   padding: "0 1rem",
   marginRight: "auto",
   backgroundColor: vars.colors.background,
+  zIndex: 1,
+
+  "::before": {
+    content: "",
+    position: "absolute",
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
+    backgroundColor: vars.colors.primary,
+    transformOrigin: "right",
+    animation: `${horizontalReveal} 0.5s 0.75s ease forwards`,
+    zIndex: 2,
+  },
+
+  "::after": {
+    content: "",
+    position: "absolute",
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
+    backgroundColor: vars.colors.background,
+    transformOrigin: "right",
+    animation: `${horizontalReveal} 0.5s 0.5s ease forwards`,
+    zIndex: 3,
+  },
 });
 
 export const heading = style({
@@ -66,6 +99,11 @@ export const starling = style({
   },
 });
 
+const fadeIn = keyframes({
+  "0%": { opacity: 0 },
+  "100%": { opacity: 1 },
+});
+
 export const link = style({
   position: "relative",
   textDecoration: "none",
@@ -77,6 +115,8 @@ export const link = style({
   marginTop: "4rem",
   marginLeft: "1rem",
   paddingBottom: "0.3125rem",
+  opacity: 0,
+  animation: `${fadeIn} 0.5s 2.25s ease forwards`,
 
   "::before": {
     content: "",
@@ -97,7 +137,39 @@ export const link = style({
   },
 });
 
+const verticalReveal = keyframes({
+  "0%": { transform: "scaleY(100%)" },
+  "100%": { transform: "scaleY(0%)" },
+});
+
 export const profile = style({
   position: "relative",
   left: "-2.5rem",
+  zIndex: 1,
+
+  "::before": {
+    content: "",
+    position: "absolute",
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
+    backgroundColor: vars.colors.primary,
+    transformOrigin: "top",
+    animation: `${verticalReveal} 0.5s 1.75s ease forwards`,
+    zIndex: 2,
+  },
+
+  "::after": {
+    content: "",
+    position: "absolute",
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
+    backgroundColor: vars.colors.background,
+    transformOrigin: "top",
+    animation: `${verticalReveal} 0.5s 1.5s ease forwards`,
+    zIndex: 3,
+  },
 });

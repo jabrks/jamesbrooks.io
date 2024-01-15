@@ -37,12 +37,9 @@ export default function Home() {
         </Link>
       </div>
 
-      <Image
-        className={classes.profile}
-        src={profile}
-        alt="Photo of James Brooks"
-        priority
-      />
+      <div className={classes.profile}>
+        <Image src={profile} alt="Photo of James Brooks" priority />
+      </div>
     </main>
   );
 }
