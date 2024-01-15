@@ -1,5 +1,20 @@
 import type { Metadata } from "next";
+import clsx from "clsx";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Poppins, Merriweather } from "next/font/google";
+import { theme } from "./styles/vars.css";
+
+const poppins = Poppins({
+  weight: ["600", "700"],
+  subsets: ["latin"],
+  variable: "--font-poppins",
+});
+
+const merriweather = Merriweather({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-merriweather",
+});
 
 export const metadata: Metadata = {
   title: "James Brooks",
@@ -13,7 +28,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className={clsx(poppins.variable, merriweather.variable, theme)}>
         {children}
         <SpeedInsights />
       </body>

@@ -1,25 +1,48 @@
+import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import profile from "../public/james.png";
+import * as classes from "./page.css";
+
+function Span({ children }: { children: ReactNode }) {
+  return <span className={classes.span}>{children}</span>;
+}
 
 export default function Home() {
   return (
-    <main>
-      <h1>Hi, I’m James</h1>
-      <p>
-        I’m a Software Engineer at{" "}
-        <Link
-          href="https://www.starlingbank.com/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Starling Bank
-        </Link>{" "}
-        in London.
-      </p>
-      <Link href="mailto:james@jamesbrooks.io">Get in touch 👋</Link>
+    <main className={classes.main}>
+      <div className={classes.content}>
+        <h1 className={classes.heading}>
+          <Span>Hi, I’m</Span>
+          <Span>James.</Span>
+        </h1>
 
-      <Image src={profile} alt="Photo of James Brooks" priority />
+        <p className={classes.paragraph}>
+          <Span>I’m a Software Engineer at</Span>
+          <Span>
+            <Link
+              className={classes.starling}
+              href="https://www.starlingbank.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Starling Bank
+            </Link>{" "}
+            in London.
+          </Span>
+        </p>
+
+        <Link className={classes.link} href="mailto:james@jamesbrooks.io">
+          Get in touch 👋
+        </Link>
+      </div>
+
+      <Image
+        className={classes.profile}
+        src={profile}
+        alt="Photo of James Brooks"
+        priority
+      />
     </main>
   );
 }
