@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import clsx from "clsx";
+import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Poppins, Merriweather } from "next/font/google";
 import { theme } from "./styles/vars.css";
@@ -30,6 +31,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={clsx(poppins.variable, merriweather.variable, theme)}>
         {children}
+        <Analytics />
         <SpeedInsights />
       </body>
     </html>
