@@ -3,7 +3,6 @@ import { assignVars, createThemeContract, style } from "@vanilla-extract/css";
 export const vars = createThemeContract({
   fonts: {
     sansSerif: null,
-    serif: null,
   },
   colors: {
     background: null,
@@ -16,13 +15,12 @@ export const vars = createThemeContract({
 export const theme = style({
   vars: assignVars(vars, {
     fonts: {
-      sansSerif: "var(--font-poppins)",
-      serif: "var(--font-merriweather)",
+      sansSerif: "var(--font-inter)",
     },
     colors: {
-      background: "#ffffff",
-      primary: "#000000",
-      secondary: "#404040",
+      background: "#fafaf9",
+      primary: "#18181b",
+      secondary: "#71717a",
       starlingTeal: "#19d3c5",
     },
   }),
@@ -34,9 +32,9 @@ export const theme = style({
   "@media": {
     "(prefers-color-scheme: dark)": {
       vars: assignVars(vars.colors, {
-        background: "#1e293b",
-        primary: "#ffffff",
-        secondary: "#cbd5e1",
+        background: "#18181b",
+        primary: "#fafaf9",
+        secondary: "#a1a1aa",
         starlingTeal: "#19d3c5",
       }),
     },

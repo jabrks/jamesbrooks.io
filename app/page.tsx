@@ -1,11 +1,38 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import profile from "../public/james.png";
+import profile from "../public/james.jpeg";
 import * as classes from "./page.css";
 
 function Span({ children }: { children: ReactNode }) {
   return <span className={classes.span}>{children}</span>;
+}
+
+function Arrow() {
+  return (
+    <svg
+      className={classes.arrow}
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      height="16"
+      width="16"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M0.75 12h22.5"
+        strokeWidth="1.5"
+      />
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M12.75 22.5 23.25 12 12.75 1.5"
+        strokeWidth="1.5"
+      />
+    </svg>
+  );
 }
 
 export default function Home() {
@@ -22,13 +49,14 @@ export default function Home() {
 
       <div className={classes.content}>
         <h1 className={classes.heading}>
-          <Span>Hi, I’m</Span>
-          <Span>James.</Span>
+          <Span>James</Span>
+          <Span>Brooks</Span>
         </h1>
 
         <p className={classes.paragraph}>
-          <Span>I’m a Software Engineer at</Span>
+          <Span>Full-stack software engineer</Span>
           <Span>
+            at{" "}
             <Link
               className={classes.starling}
               href="https://www.starlingbank.com/"
@@ -37,12 +65,12 @@ export default function Home() {
             >
               Starling Bank
             </Link>{" "}
-            in London.
+            in London
           </Span>
         </p>
 
         <Link className={classes.link} href="mailto:james@jamesbrooks.io">
-          Get in touch 👋
+          Get in touch <Arrow />
         </Link>
       </div>
     </main>

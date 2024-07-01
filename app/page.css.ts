@@ -5,7 +5,7 @@ export const main = style({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  height: "100vh",
+  minHeight: "100vh",
   padding: "2rem",
   boxSizing: "border-box",
 
@@ -25,7 +25,7 @@ export const content = style({
 
   "@media": {
     "screen and (min-width: 1024px)": {
-      left: "2.5rem",
+      left: "1.5rem",
       order: 1,
       padding: 0,
     },
@@ -39,7 +39,7 @@ const horizontalReveal = keyframes({
 
 export const span = style({
   position: "relative",
-  padding: "0 1rem",
+  padding: "0 1.25rem",
   marginRight: "auto",
   backgroundColor: vars.colors.background,
   zIndex: 1,
@@ -78,6 +78,7 @@ export const heading = style({
   fontFamily: vars.fonts.sansSerif,
   fontSize: "4rem",
   margin: 0,
+  letterSpacing: "-2px",
 
   "@media": {
     "screen and (min-width: 1024px)": {
@@ -90,14 +91,14 @@ export const paragraph = style({
   display: "flex",
   flexDirection: "column",
   gap: "0.25rem",
-  fontFamily: vars.fonts.serif,
+  fontFamily: vars.fonts.sansSerif,
   fontSize: "1.25rem",
   margin: "2.5rem 0 0",
   color: vars.colors.secondary,
 
   "@media": {
     "screen and (min-width: 1024px)": {
-      fontSize: "1.5rem",
+      fontSize: "1.4rem",
     },
   },
 });
@@ -143,7 +144,7 @@ export const link = style({
   fontSize: "1.25rem",
   fontWeight: "600",
   marginTop: "4rem",
-  marginLeft: "1rem",
+  marginLeft: "1.25rem",
   paddingBottom: "0.3125rem",
   opacity: 0,
   animation: `${fadeIn} 0.5s 2.25s ease forwards`,
@@ -206,11 +207,15 @@ export const profile = style({
 
   "@media": {
     "screen and (min-width: 1024px)": {
-      right: "2.5rem",
+      right: "1.5rem",
       order: 2,
       margin: 0,
     },
   },
+});
+
+export const arrow = style({
+  marginLeft: "0.25rem",
 });
 
 export const image = style({
