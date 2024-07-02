@@ -44,7 +44,6 @@ export default function Home() {
           src={profile}
           alt="Photo of James Brooks"
           priority
-          quality={90}
         />
       </div>
 
