@@ -54,16 +54,16 @@ export default function Home() {
         </h1>
 
         <p className={classes.paragraph}>
-          <Span>Full-stack software engineer</Span>
+          <Span>Fullstack software engineer</Span>
           <Span>
             at{" "}
             <Link
-              className={classes.starling}
-              href="https://www.starlingbank.com/"
+              className={classes.spotify}
+              href="https://www.spotify.com/"
               target="_blank"
               rel="noreferrer"
             >
-              Starling Bank
+              Spotify
             </Link>{" "}
             in London
           </Span>

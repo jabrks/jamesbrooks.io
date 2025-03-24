@@ -103,7 +103,7 @@ export const paragraph = style({
   },
 });
 
-export const starling = style({
+export const spotify = style({
   position: "relative",
   textDecoration: "none",
   color: vars.colors.primary,
@@ -116,7 +116,7 @@ export const starling = style({
     right: 0,
     bottom: 0,
     left: 0,
-    backgroundColor: vars.colors.starlingTeal,
+    backgroundColor: vars.colors.spotifyGreen,
     zIndex: -1,
     transform: "scaleY(20%)",
     transformOrigin: "bottom",

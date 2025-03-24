@@ -8,7 +8,7 @@ export const vars = createThemeContract({
     background: null,
     primary: null,
     secondary: null,
-    starlingTeal: null,
+    spotifyGreen: null,
   },
 });
 
@@ -21,7 +21,7 @@ export const theme = style({
       background: "#fafaf9",
       primary: "#18181b",
       secondary: "#71717a",
-      starlingTeal: "#19d3c5",
+      spotifyGreen: "#1ed760",
     },
   }),
 
@@ -35,7 +35,7 @@ export const theme = style({
         background: "#18181b",
         primary: "#fafaf9",
         secondary: "#a1a1aa",
-        starlingTeal: "#19d3c5",
+        spotifyGreen: "#1ed760",
       }),
     },
   },
