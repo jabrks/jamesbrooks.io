@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "next dev --webpack",
+    "build": "next build --webpack",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
     "prepare": "husky install",
     "prettier": "prettier --write .",
     "prettier:check": "prettier --check ."
@@ -16,7 +16,7 @@
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
     "clsx": "^2.1.1",
-    "next": "15.5.6",
+    "next": "16.0.1",
     "react": "^19",
     "react-dom": "^19"
   },
@@ -26,7 +26,7 @@
     "@types/react-dom": "^19",
     "@vanilla-extract/next-plugin": "^2.4.14",
     "eslint": "^9.39.0",
-    "eslint-config-next": "15.5.6",
+    "eslint-config-next": "16.0.1",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.6",
     "prettier": "3.6.2",
